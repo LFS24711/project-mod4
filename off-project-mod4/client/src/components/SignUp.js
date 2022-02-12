@@ -34,7 +34,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={() => handleSubmit}>
         <label>Username: </label>
         <input
           id="username"
@@ -51,7 +51,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
           name="password"
           value={password}
           autoComplete="off"
-          type="text"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
 
@@ -82,11 +82,11 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
 
         <button type="submit">Sign Up</button>
 
-        {errors.map((err) => (
-          <p key={err}>{err}</p>
-        ))}
+        
       </form>
-
+      {/* {errors.map((err) => (
+          <p key={err}>{err}</p>
+        ))} */}
       <button onClick={() => setIsOpen(false)}>Close</button>
     </div>
   );

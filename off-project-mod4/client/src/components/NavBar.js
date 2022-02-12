@@ -46,12 +46,12 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
         </button>
         </NavLink>
 
-        <NavLink to='/'><button>
+        <NavLink to='/EveryEverybody'><button>
             Every Everybody
         </button>
         </NavLink>
     </nav>
-    {user?<p>Hello {user}, how is everything?</p>:null}
+    {user?<p>Hello {user.username}, how is everything?</p>:null}
         </div>
     );
 }
