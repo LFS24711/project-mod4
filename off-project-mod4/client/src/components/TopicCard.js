@@ -31,7 +31,7 @@ const review_data = topic.reviews?.map((t) => {
     return (
         <div>
             <p>{topic.title}</p>
-            {topic.reviews?.map((r) => <p key={r.id}> {r.title} </p>)}
+            {/* {topic.reviews?.map((r) => <p key={r.id}> {r.title} </p>)} */}
             {review_data}
         </div>
     )
