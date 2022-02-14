@@ -4,6 +4,10 @@ import NavBar from './NavBar'
 import Login from './Login';
 import React, {useState, useEffect} from 'react';
 import Test from './Test';
+import { Routes, Route } from 'react-router-dom';
+import EveryEverthing from '../pages/EveryEverything';
+import YourEverthing from '../pages/YourEverything';
+import EveryEverybody from '../pages/EveryEverybody';
 
 
 function App() {
@@ -26,6 +30,11 @@ function App() {
     <div className="App">
       <NavBar user={user} setUser={setUser} isOpen={isOpen} setIsOpen={setIsOpen} />
       <Test />
+      <Routes>
+        <Route path="/every_everything" element={<EveryEverthing />}/>
+        <Route path="/your_everything" element={<YourEverthing />}/>
+        <Route path="/every_everybody" element={<EveryEverybody />}/>
+      </Routes>
 
     </div>
   );
