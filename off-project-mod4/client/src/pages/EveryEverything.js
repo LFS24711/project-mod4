@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "../components/Modal";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import TopicCard from "../components/TopicCard";
 
-function EveryEverthing ({ user }) {
+
+function EveryEverthing ({ user, setCurrentTopic }) {
 const [isOpen, setIsOpen] = useState(false)
 const [errors, setErrors] = useState([])
 const [topicTitle, setTopicTitle] = useState("")
 const [reviewTitle, setReviewTitle] = useState("")
 const [rating, setRating] = useState("")
 const [textContent, setTextContent] = useState("")
+const [topics, setTopics] = useState([])
+
+useEffect(() => {
+    // auto-login
+    fetch("/topics")
+    .then((r) => r.json()
+    .then((data) => setTopics(data))
+      );
+  }, []);
+
+  
 
 function handleSubmit(e) {
     e.preventDefault()
@@ -35,6 +48,11 @@ function handleSubmit(e) {
         }
     })
 }
+console.log(topics)
+
+const topics_list = topics.map((t) => {
+    return <NavLink key={t.id} to={`/topics/${t.id}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink>
+})
 
     return (
         <div> 
@@ -47,17 +65,31 @@ function handleSubmit(e) {
                         value={topicTitle} //change title to topic title in backend?
                         onChange={(e) => setTopicTitle(e.target.value)}
                         />
-                        {/* <p>Review your topic!</p>
+                        <p>Review your topic!</p>
                         <label>Review Title: </label>
                         <input 
                         type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}/> */}
+                        value={reviewTitle}
+                        onChange={(e) => setReviewTitle(e.target.value)}/>
+                        <label>Review Rating: </label>
+                        <input 
+                        type="text"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}/>
+                         <label>Review Text: </label>
+                        <input 
+                        type="textarea"
+                        value={textContent}
+                        onChange={(e) => setTextContent(e.target.value)}/>
+
                         <button type="submit">Submit</button>
                     </form>
                     <button onClick={() => setIsOpen(false)}> Close </button>
                 </Modal>
                 <button onClick={() => setIsOpen(!isOpen)}> Create Topic </button>
+                <ol>{topics_list}</ol>
+        
+                {/* <TopicCard topics={topics}/> */}
         </div>
 
     )

@@ -7,11 +7,11 @@ class TopicsController < ApplicationController
 
     def show
         topic = Topic.find(params[:id])
-       render json: topic
+       render json: topic, serializer: TopicWithReviewsSerializer
     end
 
     def create
-    topic = @current_user.topic.create!(topic_params)
+    topic = @current_user.topics.create!(topic_params)
     topic.reviews.create!(review_params)
     render json: topic, status: :created 
     end 

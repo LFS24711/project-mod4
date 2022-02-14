@@ -8,11 +8,13 @@ import { Routes, Route } from 'react-router-dom';
 import EveryEverthing from '../pages/EveryEverything';
 import YourEverthing from '../pages/YourEverything';
 import EveryEverybody from '../pages/EveryEverybody';
+import TopicCard from './TopicCard';
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null)
+  const [currentTopic, setCurrentTopic] = useState("")
 
   useEffect(() => {
     // auto-login
@@ -31,7 +33,8 @@ function App() {
       <NavBar user={user} setUser={setUser} isOpen={isOpen} setIsOpen={setIsOpen} />
       <Test />
       <Routes>
-        <Route path="/every_everything" element={<EveryEverthing user={user}/>}/>
+      <Route path="/topics/:id" element={<TopicCard currentTopic={currentTopic}/>} />
+        <Route path="/every_everything" element={<EveryEverthing user={user} setCurrentTopic={setCurrentTopic}/>}/>
         <Route path="/your_everything" element={<YourEverthing />}/>
         <Route path="/every_everybody" element={<EveryEverybody />}/>
       </Routes>
