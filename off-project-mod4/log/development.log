@@ -746,3 +746,1027 @@ Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 11:33:48 -0
   
 ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
   
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:07:28 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 23ms (Views: 18.8ms | ActiveRecord: 4.1ms | Allocations: 7174)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 12:09:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:09:34 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 18ms (Views: 17.0ms | ActiveRecord: 0.5ms | Allocations: 815)
+
+
+  [1m[36mTopic Load (2.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:10:58 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 271ms (Views: 6.0ms | ActiveRecord: 3.2ms | Allocations: 4486)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:11:09 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 15ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 793)
+
+
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:12:37 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 22ms (Views: 16.1ms | ActiveRecord: 5.6ms | Allocations: 5359)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:12:48 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 269ms (Views: 3.3ms | ActiveRecord: 8.0ms | Allocations: 1756)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:12:58 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 805)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:17:24 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 14ms (Views: 11.7ms | ActiveRecord: 2.1ms | Allocations: 5369)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:17:34 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 260ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1747)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:17:45 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 795)
+
+
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Create (6.2ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Hamburgers"], ["created_at", "2022-02-14 17:18:38.867087"], ["updated_at", "2022-02-14 17:18:38.867087"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:21:50 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 797)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:21:54 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 801)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:22:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 257ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1327)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:22:24 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 797)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:22:46 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 803)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:30:23 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.16ms)
+Completed 201 Created in 55ms (Views: 3.2ms | ActiveRecord: 11.3ms | Allocations: 8757)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:31:33 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 16ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1141)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:31:41 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 270ms (Views: 3.4ms | ActiveRecord: 8.7ms | Allocations: 1741)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:31:57 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1143)
+
+
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:35:36 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 47ms (Views: 5.3ms | ActiveRecord: 17.1ms | Allocations: 9937)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:36:11 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.12ms)
+Completed 201 Created in 44ms (Views: 3.1ms | ActiveRecord: 21.1ms | Allocations: 9935)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:36:29 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 262ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2135)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:36:49 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 13ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1163)
+
+
+Started POST "/topics" for ::1 at 2022-02-14 12:38:23 -0500
+Processing by TopicsController#create as */*
+  Parameters: {"price"=>60, "restaurant_id"=>2, "pizza_id"=>4, "topic"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.7ms | ActiveRecord: 1.8ms | Allocations: 1342)
+
+
+Started GET "/topics" for ::1 at 2022-02-14 12:39:38 -0500
+Processing by TopicsController#index as */*
+  Parameters: {"price"=>60, "restaurant_id"=>2, "pizza_id"=>4, "topic"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/controllers/topics_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 4.9ms | Allocations: 4922)
+
+
+Started POST "/topics" for ::1 at 2022-02-14 12:40:26 -0500
+Processing by TopicsController#create as */*
+  Parameters: {"title"=>"Lightbulbs", "topic"=>{"title"=>"Lightbulbs"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 593)
+
+
+  
+NoMethodError (undefined method `topic' for nil:NilClass):
+  
+app/controllers/topics_controller.rb:14:in `create'
+Started GET "/topics" for ::1 at 2022-02-14 12:41:51 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopicsController#index as */*
+  Parameters: {"title"=>"Lightbulbs", "topic"=>{"title"=>"Lightbulbs"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/controllers/topics_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 36ms (Views: 20.4ms | ActiveRecord: 11.2ms | Allocations: 8402)
+
+
+Started POST "/topics" for ::1 at 2022-02-14 12:41:56 -0500
+Processing by TopicsController#create as */*
+  Parameters: {"title"=>"Lightbulbs", "topic"=>{"title"=>"Lightbulbs"}}
+[31mUnpermitted parameter: :topic[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/topics_controller.rb:14:in `create'
+  [1m[36mTopic Create (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Lightbulbs"], ["created_at", "2022-02-14 17:41:56.200591"], ["updated_at", "2022-02-14 17:41:56.200591"]]
+  ↳ app/controllers/topics_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/topics_controller.rb:14:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered TopicSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 201 Created in 12ms (Views: 1.7ms | ActiveRecord: 5.3ms | Allocations: 2802)
+
+
+Started GET "/topics" for ::1 at 2022-02-14 12:42:00 -0500
+Processing by TopicsController#index as */*
+  Parameters: {"title"=>"Lightbulbs", "topic"=>{"title"=>"Lightbulbs"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/controllers/topics_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 1551)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:42:29 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 201 Created in 55ms (Views: 3.6ms | ActiveRecord: 23.4ms | Allocations: 4272)
+
+
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:44:14 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 201 Created in 40ms (Views: 1.4ms | ActiveRecord: 4.9ms | Allocations: 5725)
+
+
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:44:58 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 201 Created in 33ms (Views: 5.7ms | ActiveRecord: 4.1ms | Allocations: 9932)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:45:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 260ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2129)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:45:29 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 201 Created in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1169)
+
+
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:46:14 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 201 Created in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1169)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:49:33 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 201 Created in 48ms (Views: 6.7ms | ActiveRecord: 17.1ms | Allocations: 10332)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:49:49 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 686)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:50:01 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 274ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1457)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:50:06 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 667)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:50:29 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 201 Created in 6ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1253)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:51:14 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 631)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:51:30 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 201 Created in 5ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1244)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:52:48 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 14.1ms | ActiveRecord: 3.1ms | Allocations: 5537)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:52:52 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 799)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:53:19 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 35ms (Views: 18.4ms | ActiveRecord: 16.6ms | Allocations: 7171)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:53:29 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 271ms (Views: 6.5ms | ActiveRecord: 0.7ms | Allocations: 4483)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:53:33 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 807)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:53:40 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms | Allocations: 807)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:53:42 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 12.5ms | ActiveRecord: 0.3ms | Allocations: 819)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:54:38 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 39ms (Views: 17.9ms | ActiveRecord: 20.5ms | Allocations: 7179)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:55:04 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 280ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 4499)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:55:06 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 809)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 12:55:11 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 817)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:55:23 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 805)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:55:44 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 2.6ms | ActiveRecord: 1.0ms | Allocations: 796)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:56:45 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 259ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1326)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:56:52 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 3.9ms | ActiveRecord: 0.9ms | Allocations: 792)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 12:57:18 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 270ms (Views: 3.0ms | ActiveRecord: 3.2ms | Allocations: 6156)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 12:57:27 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 930)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:04:47 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 43ms (Views: 42.5ms | ActiveRecord: 11.4ms | Allocations: 8236)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:05:37 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 793)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:06:11 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 19.7ms | ActiveRecord: 3.7ms | Allocations: 7175)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 13:06:28 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 220ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 4482)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:06:36 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 817)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:06:53 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 819)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:20:56 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 20.0ms | ActiveRecord: 3.9ms | Allocations: 7171)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 13:23:33 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 270ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 4491)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 13:23:58 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 1.8ms | ActiveRecord: 3.6ms | Allocations: 807)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:24:41 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 813)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 13:26:26 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 258ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1257)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:26:52 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 5.8ms | ActiveRecord: 0.5ms | Allocations: 776)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:29:11 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 19.9ms | ActiveRecord: 3.9ms | Allocations: 7155)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 13:29:34 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 282ms (Views: 7.4ms | ActiveRecord: 10.7ms | Allocations: 4473)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:29:53 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 15ms (Views: 12.0ms | ActiveRecord: 2.5ms | Allocations: 799)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:31:02 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 36ms (Views: 16.1ms | ActiveRecord: 19.8ms | Allocations: 6993)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 13:31:15 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 269ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 4346)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:31:20 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 659)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:33:49 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:35:45 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 201 Created in 45ms (Views: 6.8ms | ActiveRecord: 18.8ms | Allocations: 10164)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 13:35:53 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 527)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 13:36:01 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Molly", "password"=>"[FILTERED]", "session"=>{"username"=>"Molly", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Molly"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 259ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 1311)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 13:36:03 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 499)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:36:21 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 18ms (Views: 14.9ms | ActiveRecord: 0.6ms | Allocations: 3070)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-02-14 13:39:54 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bob", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image_url"=>"none", "bio"=>"none", "user"=>{"username"=>"Bob", "image_url"=>"none", "bio"=>"none"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "image_url", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Bob"], ["password_digest", "$2a$12$1OzW.Kjqvik33lGQmDj/QOyRVLrIRRuox14f4Pn9KZr7Mn9ok.Y1S"], ["image_url", "none"], ["bio", "none"], ["created_at", "2022-02-14 18:39:54.927113"], ["updated_at", "2022-02-14 18:39:54.927113"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 201 Created in 260ms (Views: 1.2ms | ActiveRecord: 3.5ms | Allocations: 3728)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:43:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:43:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:43:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:44:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:52:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:52:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:52:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:52:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:52:11 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 201 Created in 36ms (Views: 3.8ms | ActiveRecord: 11.1ms | Allocations: 9138)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:53:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:53:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:53:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:53:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:53:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:53:23 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 201 Created in 3ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1093)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:54:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:55:49 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 201 Created in 9ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1093)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-02-14 13:55:53 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 201 Created in 9ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1093)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:57:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:57:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-02-14 13:57:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 14:03:09 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 36ms (ActiveRecord: 9.1ms | Allocations: 3724)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-14 14:03:19 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Bob", "password"=>"[FILTERED]", "session"=>{"username"=>"Bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 262ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 1287)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-14 14:03:24 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms | Allocations: 479)
+
+

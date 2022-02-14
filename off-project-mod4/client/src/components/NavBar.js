@@ -36,10 +36,10 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
                 }
         </Modal>:
 
-        {/* <NavLink to='/'><button>
-            Every Everything
+        <NavLink to='/'><button>
+            Home
         </button>
-        </NavLink> */}
+        </NavLink>
 
         <NavLink to='/every_everything'><button>
             Every Everything

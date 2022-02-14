@@ -31,7 +31,7 @@ function App() {
       <NavBar user={user} setUser={setUser} isOpen={isOpen} setIsOpen={setIsOpen} />
       <Test />
       <Routes>
-        <Route path="/every_everything" element={<EveryEverthing />}/>
+        <Route path="/every_everything" element={<EveryEverthing user={user}/>}/>
         <Route path="/your_everything" element={<YourEverthing />}/>
         <Route path="/every_everybody" element={<EveryEverybody />}/>
       </Routes>

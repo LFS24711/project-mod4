@@ -34,7 +34,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
 
   return (
     <div>
-      <form onSubmit={() => handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>Username: </label>
         <input
           id="username"
