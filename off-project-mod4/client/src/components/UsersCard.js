@@ -1,16 +1,17 @@
 import React from "react";
+import {NavLink} from 'react-router-dom';
 
-function UsersCard({u}) {
+function UsersCard({u, selectUser}) {
 
     return(
         <div>
-            <img src={u.image_url} />
+            <NavLink to={`/everbody/${u.username}`} onClick={()=>selectUser(u)} >
             <p>{u.username}</p>
+            <img src={u.image_url} />
             <p>{u.bio}</p>
+            </NavLink>
         </div>
     )
-
-
 
 }
 

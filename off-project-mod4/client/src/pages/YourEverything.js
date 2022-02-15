@@ -1,8 +1,28 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 
-function YourEverthing () {
+function YourEverthing ({you}) {
+
+    const [yourTopics,setYourTopics] = useState([])
+
+    useEffect(() => {
+        // auto-login
+        fetch("/your_every")
+          .then((r) => {
+            if (r.ok) {
+              r.json().then((data) => setYourTopics(data));
+            }
+          });
+      }, []);
+
+      const topics = yourTopics.map
+
+
     return (
-        <div> Your Everthing </div>
+        <div> {you.username}
+        
+
+        </div>
+
     )
 }
 

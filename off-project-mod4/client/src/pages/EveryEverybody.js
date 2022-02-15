@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UsersCard from "../components/UsersCard";
 
-function EveryEverybody() {
+function EveryEverybody({selectUser}) {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function EveryEverybody() {
 
     const allUsers = users.map((u) => {
         return (
-            <UsersCard key={u.id} u={u} />
+            <UsersCard key={u.id} u={u}  selectUser={selectUser}/>
         )
     })
 

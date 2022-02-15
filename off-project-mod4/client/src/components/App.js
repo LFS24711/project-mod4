@@ -2,41 +2,55 @@
 import Modal from './Modal';
 import NavBar from './NavBar'
 import Login from './Login';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Test from './Test';
 import { Routes, Route } from 'react-router-dom';
 import EveryEverthing from '../pages/EveryEverything';
 import YourEverthing from '../pages/YourEverything';
 import EveryEverybody from '../pages/EveryEverybody';
 import TopicCard from './TopicCard';
+import UserDetailCard from './UserDetailCard';
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState(null)
-  const [currentTopic, setCurrentTopic] = useState("")
+  const [user, setUser] = useState(null);
+  const [currentTopic, setCurrentTopic] = useState("");
+  const [selectedUser, setSelectedUser] = useState({});
+
 
   useEffect(() => {
     // auto-login
     fetch("/me")
-    .then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user));
+        }
+      });
   }, []);
 
- // if (!user) return <Login onLogin={setUser} />;
+  console.log("Current User: "+ user)
+  // if (!user) return <Login onLogin={setUser} />;
 
   return (
     <div className="App">
       <NavBar user={user} setUser={setUser} isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Test />
       <Routes>
-      <Route path="/topics/:id" element={<TopicCard currentTopic={currentTopic} user={user} />} />
-        <Route path="/every_everything" element={<EveryEverthing user={user} setCurrentTopic={setCurrentTopic}/>}/>
-        <Route path="/your_everything" element={<YourEverthing />}/>
-        <Route path="/every_everybody" element={<EveryEverybody />}/>
+        <Route path="/every/:title"
+          element={<TopicCard currentTopic={currentTopic} user={user} />}
+        />
+        <Route path="/every_everything"
+          element={<EveryEverthing user={user} setCurrentTopic={setCurrentTopic} />}
+        />
+        <Route path="/your_everything"
+          element={<YourEverthing you={user}/>}
+        />
+        <Route path="/every_everybody"
+          element={<EveryEverybody selectUser={setSelectedUser} />}
+        />
+        <Route path="/everbody/:username"
+          element={<UserDetailCard selectedUser={selectedUser} />}
+        />
       </Routes>
 
     </div>

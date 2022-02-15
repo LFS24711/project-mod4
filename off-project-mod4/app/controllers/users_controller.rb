@@ -12,8 +12,21 @@ skip_before_action :authorize, only: [:create, :index]
         render json: users, status: :ok
     end
 
+   # def show
+  #      render json: @current_user, status: :created
+    #end
+
     def show
+        a_user = User.find(params[:id])
+        render json: a_user, status: :ok
+    end
+
+    def me
         render json: @current_user, status: :created
+    end
+
+    def your_every
+        render json: @current_user.topics, status: :ok
     end
 
     private
