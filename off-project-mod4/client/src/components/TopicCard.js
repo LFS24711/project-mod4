@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from "react";
+import AddReview from "./AddReview";
 
-function TopicCard({ currentTopic }){
+function TopicCard({ currentTopic, user }){
 const [topic, setTopic] = useState([])
 
 
@@ -22,6 +23,7 @@ const review_data = topic.reviews?.map((t) => {
         <p>{t.title}</p>
         <p>{t.rating}</p>
         <p>{t.text_content}</p>
+        <p>Posted by {t.user} at {t.created_at}</p>
     </div>
     )
 });
@@ -31,6 +33,7 @@ const review_data = topic.reviews?.map((t) => {
     return (
         <div>
             <p>{topic.title}</p>
+            <AddReview ct={ct} user={user}/>
             {/* {topic.reviews?.map((r) => <p key={r.id}> {r.title} </p>)} */}
             {review_data}
         </div>

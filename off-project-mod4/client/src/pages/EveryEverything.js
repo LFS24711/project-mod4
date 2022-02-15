@@ -50,7 +50,7 @@ function handleSubmit(e) {
 }
 console.log(topics)
 
-const topics_list = topics.map((t) => {
+const topics_list = topics?.map((t) => {
     return <NavLink key={t.id} to={`/topics/${t.id}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink>
 })
 

@@ -11,13 +11,13 @@ class ReviewsController < ApplicationController
     end
 
     def create
-    review = Review.create!(review_params)
+    review =  @current_user.reviews.create!(review_params)
     render json: review, status: :created 
     end 
 
 private
 
     def review_params
-    params.permit(:title, :rating, :text_content, :user_id, :topic_id)
+    params.require(:review).permit(:title, :rating, :text_content, :user_id, :topic_id)
     end
 end

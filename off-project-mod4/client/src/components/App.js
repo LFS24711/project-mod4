@@ -33,7 +33,7 @@ function App() {
       <NavBar user={user} setUser={setUser} isOpen={isOpen} setIsOpen={setIsOpen} />
       <Test />
       <Routes>
-      <Route path="/topics/:id" element={<TopicCard currentTopic={currentTopic}/>} />
+      <Route path="/topics/:id" element={<TopicCard currentTopic={currentTopic} user={user} />} />
         <Route path="/every_everything" element={<EveryEverthing user={user} setCurrentTopic={setCurrentTopic}/>}/>
         <Route path="/your_everything" element={<YourEverthing />}/>
         <Route path="/every_everybody" element={<EveryEverybody />}/>
