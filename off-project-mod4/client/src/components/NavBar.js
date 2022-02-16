@@ -31,8 +31,8 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
 
          <Modal open={isOpen}>
                 {!signUp?
-                    <Login onLogin={setUser} setIsOpen={setIsOpen} setSignUp={setSignUp}/> :
-                    <SignUp onLogin={setUser} setIsOpen={setIsOpen} />    
+                    <Login onLogin={setUser} setIsOpen={setIsOpen} setSignUp={setSignUp} /> :
+                    <SignUp onLogin={setUser} setIsOpen={setIsOpen} setSignUp={setSignUp} />    
                 }
         </Modal>:
 

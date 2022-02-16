@@ -12372,3 +12372,75 @@ Processing by TopicsController#create as */*
 Completed 422 Unprocessable Entity in 13ms (Views: 0.8ms | ActiveRecord: 3.1ms | Allocations: 9582)
 
 
+Started GET "/me" for 127.0.0.1 at 2022-02-16 10:13:52 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#me as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 1.0ms | ActiveRecord: 1.0ms | Allocations: 4684)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-16 10:14:00 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Logan", "password"=>"[FILTERED]", "session"=>{"username"=>"Logan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Logan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers]   [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" INNER JOIN "reviews" ON "topics"."id" = "reviews"."topic_id" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.55ms)
+Completed 200 OK in 174ms (Views: 11.7ms | ActiveRecord: 3.0ms | Allocations: 17021)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-16 10:14:03 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms | Allocations: 503)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-02-16 10:14:24 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Pierre", "password"=>"[FILTERED]", "session"=>{"username"=>"Pierre", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pierre"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers]   [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" INNER JOIN "reviews" ON "topics"."id" = "reviews"."topic_id" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.73ms)
+Completed 200 OK in 159ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 2388)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-02-16 10:14:26 -0500
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms | Allocations: 499)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-02-16 10:17:24 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"ThisGuy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image_url"=>"", "bio"=>"Stufff", "user"=>{"username"=>"ThisGuy", "image_url"=>"", "bio"=>"Stufff"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ThisGuy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "image_url", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ThisGuy"], ["password_digest", "$2a$12$Cc.4HortjtGJXwNZcxcEbu9Ikl7tRxyLGaq4s9/N9e7KTS2x9e0Hm"], ["image_url", ""], ["bio", "Stufff"], ["created_at", "2022-02-16 15:17:24.438582"], ["updated_at", "2022-02-16 15:17:24.438582"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+[active_model_serializers]   [1m[36mTopic Load (0.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" INNER JOIN "reviews" ON "topics"."id" = "reviews"."topic_id" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.24ms)
+Completed 201 Created in 161ms (Views: 1.9ms | ActiveRecord: 1.9ms | Allocations: 4851)
+
+

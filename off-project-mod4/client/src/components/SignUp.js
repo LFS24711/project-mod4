@@ -8,6 +8,11 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
   const [bio, setBio] = useState("");
   const [errors, setErrors] = useState([]);
 
+  function closeModal() {
+    setSignUp(false);
+    setIsOpen(false)
+}
+
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
@@ -25,7 +30,10 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => {
+          onLogin(user);
+          closeModal();
+        });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -87,7 +95,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
       {/* {errors.map((err) => (
           <p key={err}>{err}</p>
         ))} */}
-      <button onClick={() => setIsOpen(false)}>Close</button>
+      <button onClick={() => closeModal()}>Close</button>
     </div>
   );
 }

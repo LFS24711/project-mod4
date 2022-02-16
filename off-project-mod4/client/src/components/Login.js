@@ -5,8 +5,9 @@ function Login({ onLogin, setIsOpen, setSignUp }) {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
-
-
+    function closeModal() {
+        setIsOpen(false)
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -22,11 +23,14 @@ function Login({ onLogin, setIsOpen, setSignUp }) {
         })
             .then((r) => {
                 if (r.ok) {
-                    r.json().then((user) => onLogin(user));
+                    r.json().then((user) =>{ 
+                        onLogin(user);
+                        closeModal()
+                    });
                 } else {
                     r.json().then((err) => {
                         setErrors(err.errors);
-                        alert(err.errors)
+                        alert(err.errors);
                     })
                 }
             });
@@ -48,7 +52,7 @@ function Login({ onLogin, setIsOpen, setSignUp }) {
 
             Don't have an account? <button onClick={() => setSignUp(true)}>Sign Up</button>
 
-            <button onClick={() => setIsOpen(false)}>
+            <button onClick={() => closeModal()}>
                 Close
             </button>
         </div>
