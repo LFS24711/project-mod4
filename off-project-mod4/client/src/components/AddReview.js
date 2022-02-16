@@ -30,7 +30,10 @@ function AddReview({ ct, user }) {
         })
             .then((r) => {
                 if (!r.ok) {
-                    r.json().then((err) => setErrors(err.errors))
+                    r.json().then((err) => {
+                        setErrors(err.errors);
+                        alert(err.errors)
+                    })
                 }
             })
     }

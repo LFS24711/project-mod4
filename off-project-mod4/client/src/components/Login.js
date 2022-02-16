@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-function Login({onLogin, setIsOpen, setSignUp}) {
+function Login({ onLogin, setIsOpen, setSignUp }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
-    
+
 
 
     function handleSubmit(e) {
         e.preventDefault();
-        
+
         fetch('/login', {
             method: "POST",
             headers: {
@@ -20,14 +20,17 @@ function Login({onLogin, setIsOpen, setSignUp}) {
                 username, password
             }),
         })
-        .then((r) => {
-            if (r.ok) {
-              r.json().then((user) => onLogin(user));
-            } else {
-              r.json().then((err) => setErrors(err.errors));
-            }
-          });
-        }
+            .then((r) => {
+                if (r.ok) {
+                    r.json().then((user) => onLogin(user));
+                } else {
+                    r.json().then((err) => {
+                        setErrors(err.errors);
+                        alert(err.errors)
+                    })
+                }
+            });
+    }
 
     return (
         <div>
@@ -35,18 +38,18 @@ function Login({onLogin, setIsOpen, setSignUp}) {
                 <label >Username: </label>
                 <input id='username' name='username' value={username} autoComplete='off' type="text" onChange={(e) => setUsername(e.target.value)} />
                 <label >Password: </label>
-                <input id= 'password' name='password' value={password} autoComplete='off' type="text" onChange={(e) => setPassword(e.target.value)} />
+                <input id='password' name='password' value={password} autoComplete='off' type="text" onChange={(e) => setPassword(e.target.value)} />
 
-            <button type='submit'>
-                Login
-            </button>
+                <button type='submit'>
+                    Login
+                </button>
 
             </form>
 
-            Don't have an account? <button onClick={()=>setSignUp(true)}>Sign Up</button>
+            Don't have an account? <button onClick={() => setSignUp(true)}>Sign Up</button>
 
-            <button onClick={()=>setIsOpen(false)}>
-               Close
+            <button onClick={() => setIsOpen(false)}>
+                Close
             </button>
         </div>
     )
