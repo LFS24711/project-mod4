@@ -26,10 +26,6 @@ skip_before_action :authorize, only: [:create, :index]
         render json: @current_user, status: :created
     end
 
-    def your_every
-        render json: @current_user.topics, status: :ok
-    end
-
     private
 
     def user_params

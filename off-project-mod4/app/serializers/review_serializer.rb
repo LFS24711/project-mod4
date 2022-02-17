@@ -3,9 +3,11 @@ class ReviewSerializer < ActiveModel::Serializer
   
   has_one :user
   has_one :topic
+  has_many :comments
 
   def user
     object.user.username
   end
+
 
 end

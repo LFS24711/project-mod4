@@ -15,10 +15,6 @@ class ReviewsController < ApplicationController
         render json: review, status: :created 
     end
 
-    def current_users_reviews
-        Review.all.filter{|r| user_id == current_user(:id)}
-    end
-
     def destroy
         review = @current_user.reviews.find(params[:id])
         review.destroy

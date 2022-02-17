@@ -21,9 +21,7 @@ const ct = currentTopic
       );
   }, [ct]);
 
-console.log(topic)
-console.log(reviews)
-
+  console.log("ReviewsTest" , reviews)
 
     return (
         <div>
