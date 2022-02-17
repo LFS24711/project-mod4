@@ -37,21 +37,23 @@ function EveryEverthing({ user, setCurrentTopic }) {
                 "topic": {
                     title: topicTitle,
 
-                    reviews_attributes: [{
+                    
+                },
+                "review": {
                         user_id: user.id,
                         title: reviewTitle,
                         rating: rating,
                         text_content: textContent
-                    }]
-                }
+                    }
                
             })
         })
             .then((r) => {
                 if (r.ok) {
-                    r.json().then((user) =>
+                    r.json().then((data) =>{
+                        setTopics([data, ...topics]);
                         closeModal()
-                    );
+                    });
                 } else {
                     r.json().then((err) => {
                         setErrors(err.errors);
@@ -88,11 +90,14 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         value={reviewTitle}
                         onChange={(e) => setReviewTitle(e.target.value)}
                     />
-                    <label>Review Rating: </label>
-                    <input
-                        type="text"
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)} />
+                   <label>Review Rating: </label>
+                    <select value={rating} name="rating" onChange={(e) => setRating(e.target.value)}>
+                        <option value={1}>⭐</option>
+                        <option value={2}>⭐⭐</option>
+                        <option value={3}>⭐⭐⭐</option>
+                        <option value={4}>⭐⭐⭐⭐</option>
+                        <option value={5}>⭐⭐⭐⭐⭐</option>
+                    </select>
                     <label>Review Text: </label>
                     <input
                         type="textarea"
@@ -105,9 +110,9 @@ function EveryEverthing({ user, setCurrentTopic }) {
             </Modal>
 
             {topics?.map((t) =>
-                <p className="card" key={t.id}>
+                <p className="topics-card" key={t.id}>
                     <NavLink to={`/every/${t.title}`}>
-                        <button onClick={() => setCurrentTopic(t.id)}>
+                        <button className="button-topic" onClick={() => setCurrentTopic(t.id)}>
                             {t.title}
                         </button>
                     </NavLink>

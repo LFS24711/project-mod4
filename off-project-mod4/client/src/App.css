@@ -84,3 +84,31 @@
   width: 100%;
   max-width: 400px;
 }
+
+.topic-title {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.topics-card {
+  display: grid;
+  text-align: justify;
+  margin-top: 10px;
+  padding: 10px;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  border:solid 5px rgb(161, 161, 161);
+  border-radius: 20px;
+  transition: 500ms ease;
+  background-color: rgb(241, 241, 241);
+
+  margin:5% auto;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding:1em;
+  line-height:1.5em;
+  background:rgb(248, 248, 248);
+}
+
+.button-topic {
+  font-size: 72px;;
+}

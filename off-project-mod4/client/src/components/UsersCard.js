@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {NavLink, useParams} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
+import ReviewCard from "./ReviewCard";
 
 
 
@@ -24,7 +25,13 @@ console.log("LOOOKHERE", user)
     const navigate = useNavigate();
 
     console.log("User", b)
-    
+    const all_topics = user.unique_topics?.map((topic) => {
+        return (
+            <div>
+              <p key={topic.id}>{topic.title}</p>
+            </div>
+        )
+    })
    
 
     return(
@@ -35,6 +42,8 @@ console.log("LOOOKHERE", user)
               <img src={user.image_url} />
             </div>
             <p>{user.bio}</p>
+            <p>Reviews Posted</p>
+            {user.reviews?.map((review) => <ReviewCard key={review.id} r={review} /> )}
         </div>
     )
 
