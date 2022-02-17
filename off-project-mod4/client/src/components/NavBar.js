@@ -41,7 +41,7 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
         </button>
         </NavLink>
 
-        <NavLink to='/every_everything'><button>
+        <NavLink className="Disabled" to='/every_everything'><button>
             Every Everything
         </button>
         </NavLink>

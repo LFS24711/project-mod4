@@ -5,13 +5,13 @@ import TopicCard from "../components/TopicCard";
 
 
 function EveryEverthing({ user, setCurrentTopic }) {
-    const [isOpen, setIsOpen] = useState(false)
-    const [errors, setErrors] = useState([])
-    const [topicTitle, setTopicTitle] = useState("")
-    const [reviewTitle, setReviewTitle] = useState("")
-    const [rating, setRating] = useState("")
-    const [textContent, setTextContent] = useState("")
-    const [topics, setTopics] = useState([])
+    const [isOpen, setIsOpen] = useState(false);
+    const [errors, setErrors] = useState([]);
+    const [topicTitle, setTopicTitle] = useState("");
+    const [reviewTitle, setReviewTitle] = useState("");
+    const [rating, setRating] = useState("");
+    const [textContent, setTextContent] = useState("");
+    const [topics, setTopics] = useState([]);
 
     useEffect(() => {
         // auto-login
@@ -21,10 +21,13 @@ function EveryEverthing({ user, setCurrentTopic }) {
             );
     }, []);
 
+    function closeModal() {
+        setIsOpen(false)
+    };
 
 
     function handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
         fetch("/topics", {
             method: "POST",
             headers: {
@@ -40,22 +43,26 @@ function EveryEverthing({ user, setCurrentTopic }) {
                     rating: rating,
                     text_content: textContent
                 }
-            }),
+            })
         })
             .then((r) => {
-                if (!r.ok) {
+                if (r.ok) {
+                    r.json().then((user) =>
+                        closeModal()
+                    );
+                } else {
                     r.json().then((err) => {
                         setErrors(err.errors);
-                        alert(err.errors)
+                        alert(err.errors);
                     })
                 }
-            })
+            });
     }
     console.log(topics)
 
-    const topics_list = topics?.map((t) => {
-        return <NavLink key={t.id} to={`/every/${t.title}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink>
-    })
+    // const topics_list = topics?.map((t) => {
+    //     return <li key={t.id}><NavLink to={`/every/${t.title}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink></li>
+    // })
 
     return (
         <div>
@@ -90,9 +97,8 @@ function EveryEverthing({ user, setCurrentTopic }) {
                 <button onClick={() => setIsOpen(false)}> Close </button>
             </Modal>
             <button onClick={() => setIsOpen(!isOpen)}> Create Topic </button>
-            <ol>{topics_list}</ol>
-
-            {/* <TopicCard topics={topics}/> */}
+            {/* <ol>{topics_list}</ol> */}
+            {topics?.map((t) =>  <li key={t.id}><NavLink to={`/every/${t.title}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink></li> )}
         </div>
 
     )

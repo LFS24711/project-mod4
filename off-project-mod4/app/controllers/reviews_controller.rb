@@ -6,18 +6,22 @@ class ReviewsController < ApplicationController
     end
 
     def show
-        review = Review.find(params[:id])
+       review = Review.find(params[:id])
        render json: review
     end
 
     def create
-    review =  @current_user.reviews.create!(review_params)
-    render json: review, status: :created 
-    end 
+        review =  @current_user.reviews.create!(review_params)
+        render json: review, status: :created 
+    end
+
+    def current_users_reviews
+        Review.all.filter{|r| user_id == current_user(:id)}
+    end
 
 private
 
     def review_params
-    params.require(:review).permit(:title, :rating, :text_content, :user_id, :topic_id)
+        params.require(:review).permit(:title, :rating, :text_content, :user_id, :topic_id)
     end
 end

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-function AddReview({ ct, user }) {
-    const [isOpen, setIsOpen] = useState(false)
-    const [errors, setErrors] = useState([])
-    const [topicTitle, setTopicTitle] = useState("")
-    const [reviewTitle, setReviewTitle] = useState("")
-    const [rating, setRating] = useState("")
-    const [textContent, setTextContent] = useState("")
+function AddReview({ ct, user, addReview, reviews }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [errors, setErrors] = useState([]);
+    const [topicTitle, setTopicTitle] = useState("");
+    const [reviewTitle, setReviewTitle] = useState("");
+    const [rating, setRating] = useState("");
+    const [textContent, setTextContent] = useState("");
 
     console.log("User: " + user);
+
+    function closeModal() {
+        setIsOpen(false)
+    };
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -28,14 +32,20 @@ function AddReview({ ct, user }) {
                 }
             }),
         })
-            .then((r) => {
-                if (!r.ok) {
+         .then((r) => {
+                if (r.ok) {
+                    r.json().then((data) =>{ 
+                        addReview([data, ...reviews]);
+                        console.log("New Reviews:" + reviews)
+                        closeModal()
+                    });
+                } else {
                     r.json().then((err) => {
                         setErrors(err.errors);
-                        alert(err.errors)
+                        alert(err.errors);
                     })
                 }
-            })
+            });
     }
 
     return (

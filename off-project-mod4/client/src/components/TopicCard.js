@@ -1,8 +1,10 @@
 import React,{ useState, useEffect } from "react";
 import AddReview from "./AddReview";
+import ReviewCard from "./ReviewCard";
 
 function TopicCard({ currentTopic, user }){
 const [topic, setTopic] = useState([])
+const [reviews, setReviews] = useState([]);
 
 
 const ct = currentTopic
@@ -11,31 +13,23 @@ const ct = currentTopic
     // auto-login
     fetch(`/topics/${ct}`)
     .then((r) => r.json()
-    .then((data) => setTopic(data))
+    .then((data) => {
+        setTopic(data);
+        setReviews(data)
+    })
       );
   }, [ct]);
 
 console.log(topic)
-
-const review_data = topic.reviews?.map((t) => {
-    return (
-    <div key={t.id}>
-        <p>{t.title}</p>
-        <p>{t.rating}</p>
-        <p>{t.text_content}</p>
-        <p>Posted by {t.user} at {t.created_at}</p>
-    </div>
-    )
-});
-
+console.log(reviews)
 
 
     return (
         <div>
+            <AddReview ct={ct} user={user} addReview ={setReviews} reviews={reviews} />
             <p>{topic.title}</p>
-            <AddReview ct={ct} user={user}/>
-            {/* {topic.reviews?.map((r) => <p key={r.id}> {r.title} </p>)} */}
-            {review_data}
+            {topic.reviews?.map((review) => <ReviewCard key={review.id} r={review} /> )}
+            {/* {review_data} */}
         </div>
     )
 }

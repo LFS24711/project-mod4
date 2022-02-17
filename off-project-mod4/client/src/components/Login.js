@@ -30,7 +30,7 @@ function Login({ onLogin, setIsOpen, setSignUp }) {
                 } else {
                     r.json().then((err) => {
                         setErrors(err.errors);
-                        alert(err.errors);
+                        //alert(err.errors);
                     })
                 }
             });
@@ -38,6 +38,7 @@ function Login({ onLogin, setIsOpen, setSignUp }) {
 
     return (
         <div>
+            {errors.map((e)=><p key={e}>{e}</p>)}
             <form onSubmit={handleSubmit}>
                 <label >Username: </label>
                 <input id='username' name='username' value={username} autoComplete='off' type="text" onChange={(e) => setUsername(e.target.value)} />

@@ -19,6 +19,7 @@ skip_before_action :authorize, only: [:create, :index]
     def show
         a_user = User.find(params[:id])
         render json: a_user, status: :ok
+
     end
 
     def me

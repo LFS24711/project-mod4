@@ -14,7 +14,7 @@ import UserDetailCard from './UserDetailCard';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const [currentTopic, setCurrentTopic] = useState("");
   const [selectedUser, setSelectedUser] = useState({});
 
@@ -43,7 +43,7 @@ function App() {
           element={<EveryEverthing user={user} setCurrentTopic={setCurrentTopic} />}
         />
         <Route path="/your_everything"
-          element={<YourEverthing you={user}/>}
+          element={<YourEverthing user={user}/>}
         />
         <Route path="/every_everybody"
           element={<EveryEverybody selectUser={setSelectedUser} />}
