@@ -1,12 +1,13 @@
 import React,{ useState, useEffect } from "react";
 import AddReview from "./AddReview";
 import ReviewCard from "./ReviewCard";
+import { useNavigate } from 'react-router-dom'
 
 function TopicCard({ currentTopic, user }){
 const [topic, setTopic] = useState([])
 const [reviews, setReviews] = useState([]);
 
-
+const navigate = useNavigate();
 const ct = currentTopic
 
   useEffect(() => {
@@ -28,6 +29,7 @@ console.log(reviews)
         <div>
             <AddReview ct={ct} user={user} setReviews ={setReviews} reviews={reviews} />
             <p>{topic.title}</p>
+            <button onClick={() => navigate(-1)}>Go Back</button>
             {reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews}/> )}
             {/* {review_data} */}
         </div>

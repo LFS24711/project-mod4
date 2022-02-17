@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'
 
 function UserDetailCard({selectedUser}) {
+
+    const navigate = useNavigate();
 
     console.log(selectedUser)
     return(

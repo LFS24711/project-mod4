@@ -10,6 +10,7 @@ import YourEverthing from '../pages/YourEverything';
 import EveryEverybody from '../pages/EveryEverybody';
 import TopicCard from './TopicCard';
 import UserDetailCard from './UserDetailCard';
+import UsersCard from './UsersCard';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
   const [user, setUser] = useState("");
   const [currentTopic, setCurrentTopic] = useState("");
   const [selectedUser, setSelectedUser] = useState({});
+  const [b, setB] = useState([]);
+
 
 
   useEffect(() => {
@@ -29,7 +32,7 @@ function App() {
       });
   }, []);
 
-  console.log("Current User: "+ user)
+  console.log("Current User: ", b)
   // if (!user) return <Login onLogin={setUser} />;
 
   return (
@@ -45,8 +48,11 @@ function App() {
         <Route path="/your_everything"
           element={<YourEverthing user={user}/>}
         />
+         <Route path="/everbody/:id"
+          element={<UsersCard b={b}/>}
+        />
         <Route path="/every_everybody"
-          element={<EveryEverybody selectUser={setSelectedUser} />}
+          element={<EveryEverybody selectUser={setSelectedUser} setB={setB} />}
         />
         <Route path="/everbody/:username"
           element={<UserDetailCard selectedUser={selectedUser} />}

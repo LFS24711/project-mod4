@@ -37,12 +37,12 @@ function EveryEverthing({ user, setCurrentTopic }) {
                 "topic": {
                     title: topicTitle,
 
-                    reviews: {
+                    reviews_attributes: [{
                         user_id: user.id,
                         title: reviewTitle,
                         rating: rating,
                         text_content: textContent
-                    }
+                    }]
                 }
                
             })

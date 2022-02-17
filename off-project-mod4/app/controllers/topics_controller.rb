@@ -12,9 +12,10 @@ class TopicsController < ApplicationController
     end
 
     def create
+        byebug
         topic = @current_user.topics.create!(topic_params)
-        topic.reviews.first.delete
-        topic.reviews.create!(review_params)
+        # topic.reviews.first.delete
+        # topic.reviews.create!(review_params)
         render json: topic, status: :created 
     end 
 
@@ -22,11 +23,11 @@ class TopicsController < ApplicationController
     private 
 
     def topic_params
-        params.require(:topic).permit(:title)
+        params.require(:topic).permit(:title, :reviews_attributes => [:title, :rating, :text_content, :user_id] )
     end
 
-    def review_params
-       params.require(:review).permit(:title, :rating, :text_content, :user_id)
-    end
+    # def review_params
+    #    params.require(:review).permit(:title, :rating, :text_content, :user_id)
+    # end
 
 end
