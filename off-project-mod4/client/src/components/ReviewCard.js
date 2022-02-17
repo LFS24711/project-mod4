@@ -64,7 +64,12 @@ function ReviewCard({ r, setReviews, reviews, user }) {
             <p>Posted by {r.user} at {r.created_at}</p>
             {user.username == r.user ? <button onClick={() => handleDelete(r.id)}>DELETE!</button> : null}
             <AddAComment user={user} reviewId={r.id} comments={comments} setComments={setComments} />
-            {comments?.map((c) => <CommentCard key={c.id} c={c} user={user} />)}
+            
+            <details>
+                <summary>Show comment</summary>
+                {comments?.map((c) => <CommentCard key={c.id} c={c} user={user} />)}
+            </details>
+
         </div>
     )
 }
