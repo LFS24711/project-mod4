@@ -26,7 +26,7 @@ console.log(reviews)
 
     return (
         <div>
-            <AddReview ct={ct} user={user} addReview ={setReviews} reviews={reviews} />
+            <AddReview ct={ct} user={user} setReviews ={setReviews} reviews={reviews} />
             <p>{topic.title}</p>
             {topic.reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews}/> )}
             {/* {review_data} */}

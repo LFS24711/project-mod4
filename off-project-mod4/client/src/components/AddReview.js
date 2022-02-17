@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-function AddReview({ ct, user, addReview, reviews }) {
+function AddReview({ ct, user, setReviews, reviews }) {
     const [isOpen, setIsOpen] = useState(false);
     const [errors, setErrors] = useState([]);
     const [topicTitle, setTopicTitle] = useState("");
@@ -15,8 +15,10 @@ function AddReview({ ct, user, addReview, reviews }) {
         setIsOpen(false)
     };
 
+    
+
     function handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
         fetch("/reviews", {
             method: "POST",
             headers: {
@@ -35,14 +37,13 @@ function AddReview({ ct, user, addReview, reviews }) {
          .then((r) => {
                 if (r.ok) {
                     r.json().then((data) =>{ 
-                        addReview([data, ...reviews]);
-                        console.log("New Reviews:" + reviews)
+                        setReviews([data, ...reviews]);
+                        console.log("New Reviews:" + reviews);
                         closeModal()
                     });
                 } else {
                     r.json().then((err) => {
                         setErrors(err.errors);
-                        alert(err.errors);
                     })
                 }
             });

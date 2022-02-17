@@ -67,8 +67,11 @@ function EveryEverthing({ user, setCurrentTopic }) {
     return (
         <div>
             <p>EveryEverthing</p>
+
+            <button onClick={() => setIsOpen(!isOpen)}> Create Topic </button>
+
             <Modal open={isOpen}>
-                {errors.map((e)=><p key={e}>{e}</p>)}   
+                {errors.map((e) => <p key={e}>{e}</p>)}
                 <form onSubmit={handleSubmit}>
                     <label>Topic:</label>
                     <input
@@ -81,7 +84,8 @@ function EveryEverthing({ user, setCurrentTopic }) {
                     <input
                         type="text"
                         value={reviewTitle}
-                        onChange={(e) => setReviewTitle(e.target.value)} />
+                        onChange={(e) => setReviewTitle(e.target.value)}
+                    />
                     <label>Review Rating: </label>
                     <input
                         type="text"
@@ -91,15 +95,22 @@ function EveryEverthing({ user, setCurrentTopic }) {
                     <input
                         type="textarea"
                         value={textContent}
-                        onChange={(e) => setTextContent(e.target.value)} />
-
+                        onChange={(e) => setTextContent(e.target.value)}
+                    />
                     <button type="submit">Submit</button>
                 </form>
                 <button onClick={() => setIsOpen(false)}> Close </button>
             </Modal>
-            <button onClick={() => setIsOpen(!isOpen)}> Create Topic </button>
-            {/* <ol>{topics_list}</ol> */}
-            {topics?.map((t) =>  <li key={t.id}><NavLink to={`/every/${t.title}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink></li> )}
+
+            {topics?.map((t) =>
+                <li key={t.id}>
+                    <NavLink to={`/every/${t.title}`}>
+                        <button onClick={() => setCurrentTopic(t.id)}>
+                            {t.title}
+                        </button>
+                    </NavLink>
+                </li>
+            )}
         </div>
 
     )
