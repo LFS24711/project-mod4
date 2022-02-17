@@ -77,7 +77,7 @@ function AddReview({ ct, user, setReviews, reviews }) {
                 </form>
                 <button onClick={() => setIsOpen(false)}> Close </button>
             </Modal>
-            <button onClick={() => setIsOpen(!isOpen)}> Create Review </button>
+            <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to do this")}> Create Review </button>
         </div>
     )
 }

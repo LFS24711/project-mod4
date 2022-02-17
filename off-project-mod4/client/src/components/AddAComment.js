@@ -54,7 +54,7 @@ function AddAComment({ reviewId, user, setComments, comments }) {
                 </form>
                 <button onClick={() => setIsOpen(false)}> Close </button>
             </Modal>
-            <button onClick={() => setIsOpen(!isOpen)}> Add a Comment! </button>
+            <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to do this")}> Add a Comment! </button>
         </div>
     )
 }

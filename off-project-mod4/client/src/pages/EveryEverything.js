@@ -72,8 +72,6 @@ function EveryEverthing({ user, setCurrentTopic }) {
         <div>
             <p>EveryEverthing</p>
 
-            <button onClick={() => setIsOpen(!isOpen)}> Create Topic </button>
-
             <Modal open={isOpen}>
                 {errors.map((e) => <p key={e}>{e}</p>)}
                 <form onSubmit={handleSubmit}>
@@ -108,6 +106,8 @@ function EveryEverthing({ user, setCurrentTopic }) {
                 </form>
                 <button onClick={() => setIsOpen(false)}> Close </button>
             </Modal>
+
+            <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to do this")}> Create Topic </button>
 
             {topics?.map((t) =>
                 <p className="topics-card" key={t.id}>

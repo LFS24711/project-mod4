@@ -56,20 +56,12 @@ function YourEverthing({ user }) {
 
   return (
     <div>
-      <UserDetailCard selectedUser={user} />
+      {!user?<h1>You're a nobody! Go log in!</h1>:null}
+
+       {user?<UserDetailCard selectedUser={user} />:null}
 
       {usersReviews?.map((r) => <ReviewCard key={r.id} r={r} reviews={allReviews} setReviews={setReviews} user={user}/>)}
 
-      {/* {you.topics.map((t, index) => {
-        return (<li key={t.index}>{t.title}</li>
-        )
-      }
-      )} */}
-      
-      {/* {usersReviews.map((r) => r.title)} */}
-      
-
-      {/* {allTopics} */}
     </div>
 
   )
