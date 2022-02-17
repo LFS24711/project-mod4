@@ -99,7 +99,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         <option value={5}>⭐⭐⭐⭐⭐</option>
                     </select>
                     <label>Review Text: </label>
-                    <input
+                    <textarea
                         type="textarea"
                         value={textContent}
                         onChange={(e) => setTextContent(e.target.value)}

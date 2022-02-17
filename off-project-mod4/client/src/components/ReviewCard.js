@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-function ReviewCard({ r, setReviews, reviews }) {
+function ReviewCard({ r, setReviews, reviews, user }) {
     const [stars, setStars] = useState("")
 
     function getStars(s) {
@@ -49,9 +49,11 @@ function ReviewCard({ r, setReviews, reviews }) {
             <p>{stars}</p>
             <p>{r.text_content}</p>
             <p>Posted by {r.user} at {r.created_at}</p>
-            <button onClick={() => handleDelete(r.id)}>DELETE!</button>
+            {user.username == r.user ? <button onClick={() => handleDelete(r.id)}>DELETE!</button> :null}
         </div>
     )
 }
+
+
 
 export default ReviewCard;

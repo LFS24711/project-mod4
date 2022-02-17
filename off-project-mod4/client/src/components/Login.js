@@ -43,7 +43,7 @@ function Login({ onLogin, setIsOpen, setSignUp }) {
                 <label >Username: </label>
                 <input id='username' name='username' value={username} autoComplete='off' type="text" onChange={(e) => setUsername(e.target.value)} />
                 <label >Password: </label>
-                <input id='password' name='password' value={password} autoComplete='off' type="text" onChange={(e) => setPassword(e.target.value)} />
+                <input id='password' name='password' value={password} autoComplete='off' type="password" onChange={(e) => setPassword(e.target.value)} />
 
                 <button type='submit'>
                     Login

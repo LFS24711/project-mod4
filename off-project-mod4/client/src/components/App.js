@@ -49,7 +49,7 @@ function App() {
           element={<YourEverthing user={user}/>}
         />
          <Route path="/everbody/:id"
-          element={<UsersCard b={b}/>}
+          element={<UsersCard currentUser={user} b={b}/>}
         />
         <Route path="/every_everybody"
           element={<EveryEverybody selectUser={setSelectedUser} setB={setB} />}

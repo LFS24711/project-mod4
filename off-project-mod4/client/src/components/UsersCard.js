@@ -5,7 +5,7 @@ import ReviewCard from "./ReviewCard";
 
 
 
-function UsersCard({b, selectUser}) {
+function UsersCard({b, selectUser, currentUser}) {
 const [user, setUser] = useState([])
 
     
@@ -43,7 +43,7 @@ console.log("LOOOKHERE", user)
             </div>
             <p>{user.bio}</p>
             <p>Reviews Posted</p>
-            {user.reviews?.map((review) => <ReviewCard key={review.id} r={review} /> )}
+            {user.reviews?.map((review) => <ReviewCard key={review.id} r={review} user={currentUser}/> )}
         </div>
     )
 

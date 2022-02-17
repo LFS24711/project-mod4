@@ -30,7 +30,7 @@ console.log(reviews)
             <AddReview ct={ct} user={user} setReviews ={setReviews} reviews={reviews} />
             <p className="topic-title">{topic.title}</p>
             <button onClick={() => navigate(-1)}>Go Back</button>
-            {reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews}/> )}
+            {reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews} user={user}/> )}
             {/* {review_data} */}
         </div>
     )
