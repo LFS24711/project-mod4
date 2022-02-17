@@ -58,7 +58,7 @@ function YourEverthing({ user }) {
     <div>
       <UserDetailCard selectedUser={user} />
 
-      {usersReviews?.map((r) => <ReviewCard key={r.id} r={r} />)}
+      {usersReviews?.map((r) => <ReviewCard key={r.id} r={r} reviews={allReviews} setReviews={setReviews} />)}
 
       {/* {you.topics.map((t, index) => {
         return (<li key={t.index}>{t.title}</li>

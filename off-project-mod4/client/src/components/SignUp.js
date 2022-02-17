@@ -42,6 +42,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
 
   return (
     <div>
+      {errors.map((e)=><p key={e}>{e}</p>)}
       <form onSubmit={handleSubmit}>
         <label>Username: </label>
         <input

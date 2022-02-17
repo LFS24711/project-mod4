@@ -51,6 +51,7 @@ function AddReview({ ct, user, addReview, reviews }) {
     return (
         <div>
             <Modal open={isOpen}>
+                {errors.map((e)=><p key={e}>{e}</p>)}
                 <form onSubmit={handleSubmit}>
                     <p>Review your topic!</p>
                     <label>Review Title: </label>

@@ -68,6 +68,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
         <div>
             <p>EveryEverthing</p>
             <Modal open={isOpen}>
+                {errors.map((e)=><p key={e}>{e}</p>)}   
                 <form onSubmit={handleSubmit}>
                     <label>Topic:</label>
                     <input
