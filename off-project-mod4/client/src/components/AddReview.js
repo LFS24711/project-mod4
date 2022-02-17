@@ -15,7 +15,7 @@ function AddReview({ ct, user, setReviews, reviews }) {
         setIsOpen(false)
     };
 
-    
+    console.log("New Reviews:" , reviews);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -38,7 +38,6 @@ function AddReview({ ct, user, setReviews, reviews }) {
                 if (r.ok) {
                     r.json().then((data) =>{ 
                         setReviews([data, ...reviews]);
-                        console.log("New Reviews:" + reviews);
                         closeModal()
                     });
                 } else {

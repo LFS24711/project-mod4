@@ -14,8 +14,8 @@ const ct = currentTopic
     fetch(`/topics/${ct}`)
     .then((r) => r.json()
     .then((data) => {
-        setTopic(data);
-        setReviews(data)
+        setTopic(data)
+        setReviews(data.reviews)
     })
       );
   }, [ct]);
@@ -28,7 +28,7 @@ console.log(reviews)
         <div>
             <AddReview ct={ct} user={user} setReviews ={setReviews} reviews={reviews} />
             <p>{topic.title}</p>
-            {topic.reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews}/> )}
+            {reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews}/> )}
             {/* {review_data} */}
         </div>
     )

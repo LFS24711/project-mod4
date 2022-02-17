@@ -35,14 +35,16 @@ function EveryEverthing({ user, setCurrentTopic }) {
             },
             body: JSON.stringify({
                 "topic": {
-                    title: topicTitle
-                },
-                "review": {
-                    user_id: user.id,
-                    title: reviewTitle,
-                    rating: rating,
-                    text_content: textContent
+                    title: topicTitle,
+
+                    reviews: {
+                        user_id: user.id,
+                        title: reviewTitle,
+                        rating: rating,
+                        text_content: textContent
+                    }
                 }
+               
             })
         })
             .then((r) => {

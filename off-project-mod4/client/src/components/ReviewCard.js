@@ -11,7 +11,7 @@ function ReviewCard({ r, setReviews, reviews }) {
                 if (r.ok) {
                     setReviews((reviews) =>
                         reviews.filter((r) =>
-                            r.id == !id)
+                            r.id !== id)
                     );
                 }
             });
@@ -23,7 +23,7 @@ function ReviewCard({ r, setReviews, reviews }) {
             <p>{r.rating}</p>
             <p>{r.text_content}</p>
             <p>Posted by {r.user} at {r.created_at}</p>
-            <button onClick={()=>handleDelete(r.id)}>DELETE!</button>
+            <button onClick={() => handleDelete(r.id)}>DELETE!</button>
         </div>
     )
 }
