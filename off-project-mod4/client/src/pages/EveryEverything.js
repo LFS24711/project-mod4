@@ -105,13 +105,13 @@ function EveryEverthing({ user, setCurrentTopic }) {
             </Modal>
 
             {topics?.map((t) =>
-                <li key={t.id}>
+                <p className="card" key={t.id}>
                     <NavLink to={`/every/${t.title}`}>
                         <button onClick={() => setCurrentTopic(t.id)}>
                             {t.title}
                         </button>
                     </NavLink>
-                </li>
+                </p>
             )}
         </div>
 

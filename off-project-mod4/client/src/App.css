@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+/* .App {
+  background-color: antiquewhite;
 }
 
 .App-logo {
@@ -44,4 +44,43 @@
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
   box-shadow: none;
+} */
+
+
+.card {
+  display: grid;
+  text-align: justify;
+  margin-top: 10px;
+  padding: 10px;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  border:solid 5px rgb(161, 161, 161);
+  border-radius: 20px;
+  transition: 500ms ease;
+  background-color: rgb(241, 241, 241);
+
+  margin:5% auto;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding:1em;
+  line-height:1.5em;
+  background:rgb(248, 248, 248);
+}
+
+/* .me-card {
+  display: grid;
+  margin-top: 10px;
+  padding: 10px;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  transition: 500ms ease;
+} */
+
+.project-image {
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 400px;
 }

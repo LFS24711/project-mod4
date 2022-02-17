@@ -18,7 +18,7 @@ function ReviewCard({ r, setReviews, reviews }) {
     }
 
     return (
-        <div>
+        <div className="card">
             <p>{r.title}</p>
             <p>{r.rating}</p>
             <p>{r.text_content}</p>
