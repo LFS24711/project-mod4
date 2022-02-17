@@ -58,7 +58,7 @@ function YourEverthing({ user }) {
     <div>
       {!user?<h1>You're a nobody! Go log in!</h1>:null}
 
-       {user?<UserDetailCard selectedUser={user} />:null}
+      {user?<UserDetailCard selectedUser={user} />:null}
 
       {usersReviews?.map((r) => <ReviewCard key={r.id} r={r} reviews={allReviews} setReviews={setReviews} user={user}/>)}
 
