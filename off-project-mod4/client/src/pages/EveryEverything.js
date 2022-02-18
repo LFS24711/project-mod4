@@ -9,7 +9,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
     const [errors, setErrors] = useState([]);
     const [topicTitle, setTopicTitle] = useState("");
     const [reviewTitle, setReviewTitle] = useState("");
-    const [rating, setRating] = useState("");
+    const [rating, setRating] = useState("1");
     const [textContent, setTextContent] = useState("");
     const [topics, setTopics] = useState([]);
 
@@ -22,9 +22,12 @@ function EveryEverthing({ user, setCurrentTopic }) {
     }, []);
 
     function closeModal() {
-        setIsOpen(false)
+        setIsOpen(false);
+        setRating("1");
+        setTopicTitle("");
+        setReviewTitle("");
+        setTextContent("");
     };
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -104,7 +107,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                     />
                     <button type="submit">Submit</button>
                 </form>
-                <button onClick={() => setIsOpen(false)}> Close </button>
+                <button onClick={() => closeModal()}> Close </button>
             </Modal>
 
             <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to do this")}> Create Topic </button>

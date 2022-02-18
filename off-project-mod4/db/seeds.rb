@@ -12,3 +12,14 @@ users = User.create([
     {username: 'F', password:'1234', password_confirmation:'1234', image_url:'', bio:''},
     {username: 'I', password:'1234', password_confirmation:'1234', image_url:'', bio:''},
     ])
+
+topics =Topic.create([
+    {title: "Sidewalks"}, {title: "Ham"}, {title: "Movies"}, {title: "Spoons"}
+])
+
+tr = Topic.all.count
+ur = User.all.count
+
+reviews = Review.create([
+    {title:"What??", rating: 2, text_content: "I don't know what's happening!", topic_id: rand(1..tr), user_id: rand(1..ur)}
+])

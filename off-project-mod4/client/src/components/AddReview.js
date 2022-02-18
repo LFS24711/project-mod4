@@ -1,41 +1,41 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-function AddReview({ ct, user, setReviews, reviews }) {
+function AddReview({ ct, user, setReviews, reviews, tt }) {
     const [isOpen, setIsOpen] = useState(false);
     const [errors, setErrors] = useState([]);
     const [topicTitle, setTopicTitle] = useState("");
     const [reviewTitle, setReviewTitle] = useState("");
-    const [rating, setRating] = useState("");
+    const [rating, setRating] = useState(1);
     const [textContent, setTextContent] = useState("");
 
-    console.log("User: " + user);
+    console.log("rating: " , rating);
 
     function closeModal() {
-        setIsOpen(false)
+        setIsOpen(false);
+        setRating("1");
+        setReviewTitle("");
+        setTextContent("");
     };
 
     console.log("New Reviews:" , reviews);
 
     function handleSubmit(e) {
         e.preventDefault();
-        const itemData = {
-            topic_id: ct,
-                    user_id: user.id,
-                    title: reviewTitle,
-                    rating: rating,
-                    text_content: textContent
-        };
-        setReviewTitle("");
-        setTextContent("");
         fetch("/reviews", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(
-                itemData
-            ),
+            body: JSON.stringify({
+                "review": {
+                    topic_id: ct,
+                    user_id: user.id,
+                    title: reviewTitle,
+                    rating: rating,
+                    text_content: textContent
+                }
+            }),
         })
          .then((r) => {
                 if (r.ok) {
@@ -57,6 +57,7 @@ function AddReview({ ct, user, setReviews, reviews }) {
                 {errors.map((e)=><p key={e}>{e}</p>)}
                 <form onSubmit={handleSubmit}>
                     <p>Review your topic!</p>
+                    <p className="topic-title">{tt}</p>
                     <label>Review Title: </label>
                     <input
                         type="text"
@@ -78,7 +79,7 @@ function AddReview({ ct, user, setReviews, reviews }) {
 
                     <button type="submit">Submit</button>
                 </form>
-                <button onClick={() => setIsOpen(false)}> Close </button>
+                <button onClick={() => closeModal()}> Close </button>
             </Modal>
             <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to do this")}> Create Review </button>
         </div>

@@ -6,7 +6,8 @@ import ReviewCard from "./ReviewCard";
 
 
 function UsersCard({b, selectUser, currentUser}) {
-const [user, setUser] = useState([])
+const [user, setUser] = useState([]);
+const [usersReviews, setUsersReviews] = useState([])
 
     
 const { id } = useParams();
@@ -16,22 +17,22 @@ const { id } = useParams();
             .then((r) => r.json())
             .then((data) => {
                 setUser(data);
+                setUsersReviews(data.reviews);
             });
         }, [id]);
 
-console.log("LOOOKHERE", user)
 
 
     const navigate = useNavigate();
 
-    console.log("User", b)
+    console.log("UserCard user", user)
     const all_topics = user.unique_topics?.map((topic) => {
         return (
             <div>
               <p key={topic.id}>{topic.title}</p>
             </div>
         )
-    })
+    });
    
 
     return(
@@ -43,7 +44,7 @@ console.log("LOOOKHERE", user)
             </div>
             <p>{user.bio}</p>
             <p>Reviews Posted</p>
-            {user.reviews?.map((review) => <ReviewCard key={review.id} r={review} user={currentUser}/> )}
+            {usersReviews?.map((review) => <ReviewCard key={review.id} r={review} user={currentUser} setReviews={setUsersReviews}/> )}
         </div>
     )
 

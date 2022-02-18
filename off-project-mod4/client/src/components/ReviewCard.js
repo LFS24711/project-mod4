@@ -11,6 +11,7 @@ function ReviewCard({ r, setReviews, reviews, user }) {
         switch (s) {
             case 1:
                 setStars("⭐")
+                break;
             case 2:
                 setStars("⭐⭐")
                 break;
