@@ -26,7 +26,7 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
     <nav>
         {!user?
             <button onClick={()=> setIsOpen(!isOpen)}>Login</button>:
-            <button onClick={handleLogout}>Logout</button> 
+            <NavLink to='/'><button onClick={handleLogout}>Logout</button></NavLink>
         }
 
          <Modal open={isOpen}>

@@ -31,13 +31,13 @@ function ReviewCard({ r, setReviews, reviews, user }) {
     useEffect(() => {
         // auto-login
         fetch(`/reviews/${r.id}`)
-        .then((r) => r.json()
-        .then((data) => {
-            setComments(data.comments)
-            getStars(r.rating);
-        })
-          );
-      }, []);
+            .then((r) => r.json()
+                .then((data) => {
+                    setComments(data.comments)
+                })
+            );
+        getStars(r.rating);
+    }, []);
 
     console.log("Comments: ", comments)
 
@@ -63,9 +63,9 @@ function ReviewCard({ r, setReviews, reviews, user }) {
             <p>{r.text_content}</p>
             <p>Posted by {r.user} at {r.created_at}</p>
             {user.username == r.user ? <button onClick={() => handleDelete(r.id)}>DELETE!</button> : null}
-            
+
             <AddAComment user={user} reviewId={r.id} comments={comments} setComments={setComments} />
-            
+
             <details>
                 <summary>Show comment</summary>
                 {comments?.map((c) => <CommentCard key={c.id} c={c} user={user} setComments={setComments} />)}

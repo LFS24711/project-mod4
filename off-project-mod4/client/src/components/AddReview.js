@@ -19,20 +19,23 @@ function AddReview({ ct, user, setReviews, reviews }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        const itemData = {
+            topic_id: ct,
+                    user_id: user.id,
+                    title: reviewTitle,
+                    rating: rating,
+                    text_content: textContent
+        };
+        setReviewTitle("");
+        setTextContent("");
         fetch("/reviews", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                "review": {
-                    topic_id: ct,
-                    user_id: user.id,
-                    title: reviewTitle,
-                    rating: rating,
-                    text_content: textContent
-                }
-            }),
+            body: JSON.stringify(
+                itemData
+            ),
         })
          .then((r) => {
                 if (r.ok) {
@@ -60,13 +63,13 @@ function AddReview({ ct, user, setReviews, reviews }) {
                         value={reviewTitle}
                         onChange={(e) => setReviewTitle(e.target.value)} />
                     <label>Review Rating: </label>
-                    <select value={rating} name="rating" onChange={(e) => setRating(e.target.value)}>
-                    <option value={1}>⭐</option>
-                    <option value={2}>⭐⭐</option>
-                    <option value={3}>⭐⭐⭐</option>
-                    <option value={4}>⭐⭐⭐⭐</option>
-                    <option value={5}>⭐⭐⭐⭐⭐</option>
-                </select>
+                    <select name="rating" onChange={(e) => setRating(e.target.value)}>
+                        <option value={"1"}>⭐</option>
+                        <option value={"2"}>⭐⭐</option>
+                        <option value={"3"}>⭐⭐⭐</option>
+                        <option value={"4"}>⭐⭐⭐⭐</option>
+                        <option value={"5"}>⭐⭐⭐⭐⭐</option>
+                    </select>
                     <label>Review Text: </label>
                     <textarea
                         type="textarea"

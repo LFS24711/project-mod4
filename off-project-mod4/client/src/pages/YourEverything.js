@@ -47,7 +47,7 @@ function YourEverthing({ user }) {
   // });
 
   //{t.reviews?.map((review) => <ReviewCard key={review.id} r={review} /> )}
-  const usersReviews = allReviews.filter((r) => (r.user == user.username));
+  const usersReviews = user?allReviews.filter((r) => (r.user == user.username)):null;
   
 
 
@@ -57,13 +57,9 @@ function YourEverthing({ user }) {
   return (
     <div>
       {!user?<h1>You're a nobody! Go log in!</h1>:null}
-
       {user?<UserDetailCard selectedUser={user} />:null}
-
       {usersReviews?.map((r) => <ReviewCard key={r.id} r={r} reviews={allReviews} setReviews={setReviews} user={user}/>)}
-
     </div>
-
   )
 }
 

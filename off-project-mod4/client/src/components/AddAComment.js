@@ -12,18 +12,20 @@ function AddAComment({ reviewId, user, setComments, comments }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        const itemData = {
+            review_id: reviewId,
+            user_id: user.id,
+            text_content: textContent,
+        };
+        setTextContent("");
         fetch("/comments", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                "comment": {
-                    review_id: reviewId,
-                    user_id: user.id,
-                    text_content: textContent
-                }
-            }),
+            body: JSON.stringify(
+                itemData
+            ),
         })
             .then((r) => {
                 if (r.ok) {
