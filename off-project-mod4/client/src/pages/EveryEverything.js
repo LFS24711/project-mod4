@@ -83,6 +83,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         type="text"
                         value={topicTitle} //change title to topic title in backend?
                         onChange={(e) => setTopicTitle(e.target.value)}
+                        required
                     />
                     <p>Review your topic!</p>
                     <label>Review Title: </label>
@@ -90,6 +91,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         type="text"
                         value={reviewTitle}
                         onChange={(e) => setReviewTitle(e.target.value)}
+                        required
                     />
                    <label>Review Rating: </label>
                     <select value={rating} name="rating" onChange={(e) => setRating(e.target.value)}>
@@ -104,6 +106,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         type="textarea"
                         value={textContent}
                         onChange={(e) => setTextContent(e.target.value)}
+                        required
                     />
                     <button type="submit">Submit</button>
                 </form>

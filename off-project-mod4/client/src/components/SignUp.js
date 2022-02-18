@@ -52,6 +52,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
           autoComplete="off"
           type="text"
           onChange={(e) => setUsername(e.target.value)}
+          required
         />
 
         <label>Password: </label>
@@ -62,6 +63,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
           autoComplete="off"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
         <label>Password Confirmation</label>
@@ -71,6 +73,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="off"
+          required
         />
 
         <label>Image Url:</label>
@@ -79,6 +82,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
           id="imageUrl"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
+          required
         />
         <label htmlFor="bio">Bio</label>
         <input
@@ -87,6 +91,7 @@ function SignUp({ onLogin, setSignUp, setIsOpen }) {
           id="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value)}
+          required
         />
 
         <button type="submit">Sign Up</button>

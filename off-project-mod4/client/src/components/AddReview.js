@@ -62,7 +62,8 @@ function AddReview({ ct, user, setReviews, reviews, tt }) {
                     <input
                         type="text"
                         value={reviewTitle}
-                        onChange={(e) => setReviewTitle(e.target.value)} />
+                        onChange={(e) => setReviewTitle(e.target.value)}
+                    />
                     <label>Review Rating: </label>
                     <select name="rating" onChange={(e) => setRating(e.target.value)}>
                         <option value={"1"}>⭐</option>
@@ -75,7 +76,8 @@ function AddReview({ ct, user, setReviews, reviews, tt }) {
                     <textarea
                         type="textarea"
                         value={textContent}
-                        onChange={(e) => setTextContent(e.target.value)} />
+                        onChange={(e) => setTextContent(e.target.value)}
+                    />
 
                     <button type="submit">Submit</button>
                 </form>

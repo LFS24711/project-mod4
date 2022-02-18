@@ -51,7 +51,9 @@ function AddAComment({ reviewId, user, setComments, comments }) {
                     <textarea
                         type="textarea"
                         value={textContent}
-                        onChange={(e) => setTextContent(e.target.value)} />
+                        onChange={(e) => setTextContent(e.target.value)}
+                        required
+                    />
                     <button type="submit">Submit</button>
                 </form>
                 <button onClick={() => setIsOpen(false)}> Close </button>
