@@ -9,7 +9,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
     const [errors, setErrors] = useState([]);
     const [topicTitle, setTopicTitle] = useState("");
     const [reviewTitle, setReviewTitle] = useState("");
-    const [rating, setRating] = useState("");
+    const [rating, setRating] = useState("1");
     const [textContent, setTextContent] = useState("");
     const [topics, setTopics] = useState([]);
 
@@ -22,9 +22,12 @@ function EveryEverthing({ user, setCurrentTopic }) {
     }, []);
 
     function closeModal() {
-        setIsOpen(false)
+        setIsOpen(false);
+        setRating("1");
+        setTopicTitle("");
+        setReviewTitle("");
+        setTextContent("");
     };
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -72,8 +75,6 @@ function EveryEverthing({ user, setCurrentTopic }) {
         <div>
             <p>EveryEverthing</p>
 
-            <button onClick={() => setIsOpen(!isOpen)}> Create Topic </button>
-
             <Modal open={isOpen}>
                 {errors.map((e) => <p key={e}>{e}</p>)}
                 <form onSubmit={handleSubmit}>
@@ -82,6 +83,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         type="text"
                         value={topicTitle} //change title to topic title in backend?
                         onChange={(e) => setTopicTitle(e.target.value)}
+                        required
                     />
                     <p>Review your topic!</p>
                     <label>Review Title: </label>
@@ -89,6 +91,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         type="text"
                         value={reviewTitle}
                         onChange={(e) => setReviewTitle(e.target.value)}
+                        required
                     />
                    <label>Review Rating: </label>
                     <select value={rating} name="rating" onChange={(e) => setRating(e.target.value)}>
@@ -103,11 +106,14 @@ function EveryEverthing({ user, setCurrentTopic }) {
                         type="textarea"
                         value={textContent}
                         onChange={(e) => setTextContent(e.target.value)}
+                        required
                     />
                     <button type="submit">Submit</button>
                 </form>
-                <button onClick={() => setIsOpen(false)}> Close </button>
+                <button onClick={() => closeModal()}> Close </button>
             </Modal>
+
+            <button onClick={() => user?setIsOpen(!isOpen):alert("You must be logged in to do this")}> Create Topic </button>
 
             {topics?.map((t) =>
                 <p className="topics-card" key={t.id}>

@@ -26,7 +26,7 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
     <nav>
         {!user?
             <button onClick={()=> setIsOpen(!isOpen)}>Login</button>:
-            <button onClick={handleLogout}>Logout</button> 
+            <NavLink to='/'><button onClick={handleLogout}>Logout</button></NavLink>
         }
 
          <Modal open={isOpen}>
@@ -41,7 +41,7 @@ function NavBar({user, setUser, isOpen, setIsOpen}) {
         </button>
         </NavLink>
 
-        <NavLink className="Disabled" to='/every_everything'><button>
+        <NavLink to='/every_everything'><button>
             Every Everything
         </button>
         </NavLink>

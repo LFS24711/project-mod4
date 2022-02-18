@@ -9,4 +9,8 @@ class CommentSerializer < ActiveModel::Serializer
     object.user.username
   end
 
+  def created_at
+    object.created_at.strftime('%F')
+  end
+
 end

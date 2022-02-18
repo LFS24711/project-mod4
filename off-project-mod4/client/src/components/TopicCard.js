@@ -24,7 +24,7 @@ const ct = currentTopic
 
     return (
         <div>
-            <AddReview ct={ct} user={user} setReviews ={setReviews} reviews={reviews} />
+            <AddReview ct={ct} tt={topic.title} user={user} setReviews ={setReviews} reviews={reviews} />
             <p className="topic-title">{topic.title}</p>
             <button onClick={() => navigate(-1)}>Go Back</button>
             {reviews?.map((review) => <ReviewCard key={review.id} r={review} reviews={reviews} setReviews={setReviews} user={user}/> )}
