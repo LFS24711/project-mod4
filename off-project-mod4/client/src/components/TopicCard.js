@@ -21,7 +21,6 @@ const ct = currentTopic
       );
   }, [ct]);
 
-  console.log("ReviewsTest" , reviews)
 
     return (
         <div>

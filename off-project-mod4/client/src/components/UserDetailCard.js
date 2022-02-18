@@ -5,7 +5,6 @@ function UserDetailCard({selectedUser}) {
 
     const navigate = useNavigate();
 
-    console.log(selectedUser)
     return(
         <div className="card">
             <p>{selectedUser.username}</p>

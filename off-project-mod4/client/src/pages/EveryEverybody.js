@@ -13,8 +13,6 @@ function EveryEverybody({selectUser, setB }) {
             );
     }, [])
 
-    console.log("Users: " + users)
-
     const allUsers = users.map((u) => {
         return (
             <div key={u.id} className="card">

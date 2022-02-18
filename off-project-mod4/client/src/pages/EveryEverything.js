@@ -62,7 +62,7 @@ function EveryEverthing({ user, setCurrentTopic }) {
                 }
             });
     }
-    console.log(topics)
+
 
     // const topics_list = topics?.map((t) => {
     //     return <li key={t.id}><NavLink to={`/every/${t.title}`}><button onClick={() => setCurrentTopic(t.id)}>{t.title}</button></NavLink></li>

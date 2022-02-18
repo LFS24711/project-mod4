@@ -34,9 +34,9 @@ function ReviewCard({ r, setReviews, reviews, user }) {
         .then((r) => r.json()
         .then((data) => {
             setComments(data.comments)
-            getStars(r.rating);
         })
-          );
+        );
+        getStars(r.rating);
       }, []);
 
     console.log("Comments: ", comments)

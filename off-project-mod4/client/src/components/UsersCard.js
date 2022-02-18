@@ -19,7 +19,6 @@ const { id } = useParams();
             });
         }, [id]);
 
-console.log("LOOOKHERE", user)
 
 
     const navigate = useNavigate();
