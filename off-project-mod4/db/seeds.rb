@@ -30,6 +30,7 @@ reviews = Review.create([
     {title:"What??", rating: 2, text_content: "I don't know what's happening!", topic_id: rand(1..tr), user_id: rand(1..ur)},
     {title:"I hate them!", rating: 1, text_content: "I hate them! I wish they'd all just dissapear!", topic_id: rand(1..tr), user_id: rand(1..ur)},
 ])
+
 puts "Seeding reviews done."
 
 rr = Review.all.count
